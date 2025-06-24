@@ -16,7 +16,7 @@ test('Download excel report transaction', async ({page}) => {
  const currentMonth = now.getMonth();
 
  await variables.clearCookies(page);
- await // some user for logi in
+ await // some user for log in
  await page.waitForLoadState('load');
 
  await variables.reports(page).click();
