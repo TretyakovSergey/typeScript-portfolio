@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { saleUser2 } from '../../helper/hp.ts';
+import { someLogin } from '../../helper/hp.ts';
 import { variables } from '../searchProducts/variables.ts';
 import { downloadExcelAndParse, matchHeaders } from '../../helper/excelUtils.ts';
 import { expectedHeaders } from '../../helper/expectedHeaders.ts';
