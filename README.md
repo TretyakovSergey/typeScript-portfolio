@@ -4,7 +4,7 @@
   <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="100" alt="Hi">
 </p>
 
-<h3 align="center">🚀 Software QA Automation Engineer based in Cyprus 🌴</h3>
+<h3 align="center">🚀 Software QA Automation Engineer based in Tashkent 🇺🇿</h3>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/sergey-tretyakov/" target="_blank">
