@@ -1,5 +1,5 @@
 import {test, expect, Page} from '@playwright/test';
-import {saleUser2} from '../../../helper/hp.ts';
+import {someUser} from '../../../helper/hp.ts';
 import {BARCODE_200} from '../constans.ts';
 
 test ('adding 200 products by scanning a barcode', async ({page})=> {
