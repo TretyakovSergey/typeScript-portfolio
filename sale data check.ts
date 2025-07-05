@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { //Some User for log in } from '../../helper/hp.ts';
+import { someUser } from '../../helper/hp.ts';
 import { variables } from '../searchProducts/variables.ts';
 import { MOTORS } from '../searchProducts/motors.ts';
 
@@ -25,7 +25,7 @@ It showcases my ability to write automated end-to-end tests using Playwright,
   const choseCashRegister = page.locator('.css-18opwfc-placeholder', { hasText: 'Select cash desk' });
 
   await variables.clearCookies(page);
-  // Some User for Log in
+  await someUser(page);
   await page.waitForLoadState('load');
 
   await variables.sale(page).click();
