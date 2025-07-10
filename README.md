@@ -19,7 +19,7 @@
 
 ### ✨ About Me
 
-> 💡 "Don't make the classic smart person's mistake of thinking no one's smarter than you."
+> 💡 "The most dangerous delusion is thinking you've tested everything."
 
 - 🔍 Passionate about automated testing & quality engineering
 - 💼 Currently working on advanced UI + API + Excel validations
