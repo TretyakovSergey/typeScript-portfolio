@@ -36,7 +36,7 @@ jobs:
         run: env | sort
 
       - name: 🔍 Cache SonarCloud packages
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         if: startsWith(github.head_ref, 'renovate/') == false
         with:
           path: ~/.sonar/cache
@@ -45,7 +45,7 @@ jobs:
 
       - name: 🔍 Cache SonarCloud scanner
         id: cache-sonar-scanner
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         if: startsWith(github.head_ref, 'renovate/') == false
         with:
           path: ~/.sonar/scanner
