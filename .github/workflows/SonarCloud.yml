@@ -1,4 +1,5 @@
 name: SonarCloud
+
 on:
   push:
     branches: [main]
@@ -7,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and analyze
+    name: Build, test and analyze
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +21,21 @@ jobs:
         with:
           node-version: 18
 
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - run: npm ci
-        if: hashFiles('package-lock.json') != ''
-      - run: npm test --if-present
+
+      - name: Run tests
+        run: npm test -- --ci --coverage
+
+      - name: Build project
+        run: npm run build
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
