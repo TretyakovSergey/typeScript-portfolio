@@ -1,0 +1,146 @@
+import { test, expect } from '@playwright/test';
+import { saleUser2 } from '../../helper/hp.ts';
+import { variables, TIMEOUTS } from '../searchProducts/variables.ts';
+import path from 'path';
+import * as XLSX from 'xlsx';
+
+test('Changing product properties via bulk operations:  article and barcode with a large number of fields', async ({ page }) => {
+
+ function randomArticle(prefix: string, length = 6): string {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return `${prefix}-${result}`;
+ }
+
+ function randomBarcode(length = 12): string {
+    const digits = '0123456789';
+    let result = '';
+  for (let i = 0; i < length; i++) {
+    result += digits.charAt(Math.floor(Math.random() * digits.length));
+  }
+  return result;
+ }
+ 
+ function updateExcelFile(filePath: string) {
+    const workbook = XLSX.readFile(filePath);
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const data = XLSX.utils.sheet_to_json<any>(sheet, { header: 1 });
+
+  for (let i = 1; i < data.length; i++) {
+    data[i][1] = randomArticle('ART');
+    data[i][2] = randomBarcode();
+  }
+    const newSheet = XLSX.utils.aoa_to_sheet(data);
+    workbook.Sheets[sheetName] = newSheet;
+    XLSX.writeFile(workbook, filePath);
+ }
+
+ const uploadFileButton = page.getByRole('heading', { name: 'Upload file' });
+ const inputFileButton = page.locator('input#file');
+ const filePath = path.resolve(__dirname, '../test-data/BulkOperationProducts.xlsx');
+ const doNotLoadButton = page.locator('li.MuiAutocomplete-option >> text=Do not load');
+ const fieldDropdownSKU = page.getByRole('button', { name: 'SKU' });
+ const fieldDropdownBarcode = page.getByRole('button', { name: 'Barcode' });
+ const statusCell = page.getByRole('cell', { name: 'Ready to add' });
+ const dropdownButton = page.getByRole('button', { name: /Do not load/i });
+ const skuOptionButton = page.locator('.MuiAutocomplete-option', { hasText: 'SKU' });
+ const barcodeoptionButton = page.locator('.MuiAutocomplete-option', { hasText: 'Barcode' });
+ 
+ await variables.clearCookies(page);
+ await saleUser2(page);
+ await page.waitForLoadState('networkidle');
+
+ await variables.products(page).click();
+ await expect(variables.catalog(page)).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await variables.catalog(page).click();
+
+ await expect(page).toHaveURL('https://staging-app.makebillz.top/products/catalog?limit=10&page=1');
+ await page.waitForTimeout(1000);
+
+ await page.reload();
+ await page.waitForLoadState('networkidle');
+
+ await variables.searchInputCatalog(page).fill('Товар_19');
+ await expect(variables.searchInputCatalog(page)).toHaveValue('Товар_19', {timeout: TIMEOUTS.MS_10000});
+ await page.waitForTimeout(1000);
+
+ const oldArticle = await page.locator('#product-articul-0').innerText();
+ const oldBarcode = await page.locator('#product-barcode-0').innerText();
+
+ await variables.actionCatalogButton(page).click();
+ await page.waitForTimeout(1000);
+ 
+ updateExcelFile(filePath);
+
+ await expect(uploadFileButton).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await expect(uploadFileButton).toBeEnabled({timeout: TIMEOUTS.MS_10000});
+ await uploadFileButton.click();
+
+ await inputFileButton.setInputFiles(filePath);
+ 
+ await expect(variables.nextButton(page)).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await expect(variables.nextButton(page)).toBeEnabled({timeout: TIMEOUTS.MS_10000});
+ await variables.nextButton(page).click();
+ await page.waitForTimeout(1000);
+
+ await fieldDropdownSKU.click();
+ await expect(doNotLoadButton).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await doNotLoadButton.click();
+ await page.waitForTimeout(1000);
+
+ await expect(fieldDropdownBarcode).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await fieldDropdownBarcode.click();
+ await expect(doNotLoadButton).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await doNotLoadButton.click();
+ await page.waitForTimeout(1000);
+ 
+ await expect(variables.nextButton(page)).toBeEnabled({timeout: TIMEOUTS.MS_10000});
+ await variables.nextButton(page).click();
+ 
+ await page.waitForSelector('table[role="table"] >> text=Ready to add', { timeout: TIMEOUTS.MS_10000 });
+
+ await expect(statusCell.nth(0)).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await expect(statusCell.nth(0)).toHaveText(/Ready to add/i);
+
+ await variables.bulkOperationButton(page).click();
+
+ await expect(variables.editProductProperties(page)).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await expect(variables.editProductProperties(page)).toBeEnabled({timeout: TIMEOUTS.MS_10000});
+ await variables.editProductProperties(page).click();
+ await page.waitForTimeout(1000);
+
+ await expect(dropdownButton.nth(0)).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await expect(dropdownButton.nth(0)).toBeEnabled({timeout: TIMEOUTS.MS_10000});
+ await dropdownButton.nth(0).click();
+
+ await expect(skuOptionButton).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await skuOptionButton.click();
+
+ await expect(dropdownButton).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await dropdownButton.click();
+
+ await expect(barcodeoptionButton).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await barcodeoptionButton.click();
+
+ await page.waitForTimeout(1000);
+
+ await variables.applyButton(page).click();
+
+ await expect(variables.toastifyMessageSuccess(page)).toBeVisible({timeout: TIMEOUTS.MS_10000});
+ await page.waitForLoadState('networkidle');
+
+ await variables.searchInputCatalog(page).fill('Товар_19');
+ await expect(variables.searchInputCatalog(page)).toHaveValue('Товар_19', {timeout: TIMEOUTS.MS_10000});
+
+ const newArticle = await page.locator('#product-articul-0').innerText();
+ const newBarcode = await page.locator('#product-barcode-0').innerText();
+
+ await expect(newBarcode).not.toBe(oldBarcode);
+ await expect(newArticle).not.toBe(oldArticle);
+
+});
+
