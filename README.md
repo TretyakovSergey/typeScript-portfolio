@@ -1,65 +1,205 @@
-<h1 align="center">Hi there! I'm Sergey 👋</h1>
+<h1 align="center">👋 Hi, I'm Sergey Tretyakov</h1>
+
+<h3 align="center">QA Automation Engineer</h3>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="100" alt="Hi">
+  <b>Playwright • TypeScript • API Testing • E2E Automation</b>
 </p>
 
-<h3 align="center">🚀 Software QA Automation Engineer based in Tashkent 🇺🇿</h3>
+<p align="center">
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="420" alt="Coding">
+</p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/sergey-tretyakov/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin" />
+  <a href="https://www.linkedin.com/in/sergey-tretyakov/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <a href="mailto:youremail@example.com">
-    <img src="https://img.shields.io/badge/Gmail-red?style=for-the-badge&logo=gmail&logoColor=white" />
+    <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
 
 ---
 
-### ✨ About Me
+## 🚀 About Me
 
-> 💡 "The most dangerous delusion is thinking you've tested everything."
+I'm a **QA Automation Engineer** focused on building reliable and maintainable automated tests.
 
-- 🔍 Passionate about automated testing & quality engineering
-- 💼 Currently working on advanced UI + API + Excel validations
-- 🎯 I specialize in building robust test automation frameworks
-- 💬 Ask me about: **Playwright**, **TypeScript**, **Python**, **Postman**, **Jira**, and more!
-- ⚡ Fun fact: I can debug your flaky test in the time it takes to brew coffee ☕
+I work mainly with **Playwright + TypeScript**, covering UI, API and end-to-end scenarios.
+
+### What I do
+
+* 🧪 Build and maintain **E2E automation frameworks**
+* 🎭 Automate web applications with **Playwright**
+* 🔌 Test APIs with **Postman / Newman**
+* 📊 Validate **Excel reports and business data**
+* 🧩 Design reusable **Page Object Models**
+* 📈 Improve test coverage and regression stability
+* 🐛 Investigate failures and identify root causes
+* ⚡ Work with CI/CD and automated test execution
 
 ---
 
-### 🧰 Languages and Tools
+## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="50" height="50"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="50" height="50"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="55" height="55"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="50" height="50"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" alt="Git" width="50" height="50"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" title="MySQL" alt="MySQL" width="50" height="50"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/raw/master/icons/jira/jira-original-wordmark.svg" title="Jira" alt="Jira" width="50" height="50"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/selenium/selenium-original.svg" title="Selenium" alt="Selenium" width="50" height="50"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/raw/master/icons/chrome/chrome-original-wordmark.svg" title="Chrome" alt="Chrome" width="50" height="50"/>&nbsp;
-  <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" title="Postman" alt="Postman" width="50" height="50"/>&nbsp;
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" width="55" title="TypeScript"/>
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/playwright/playwright-original.svg" width="55" title="Playwright"/>
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" width="55" title="Python"/>
+
+<img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" width="55" title="Postman"/>
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" width="60" title="Node.js"/>
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" width="55" title="Git"/>
+
+<img src="https://github.com/devicons/devicon/raw/master/icons/jira/jira-original-wordmark.svg" width="55" title="Jira"/>
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" width="55" title="MySQL"/>
+
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Playwright-2E2E2E?style=flat-square&logo=playwright&logoColor=white"/>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/API%20Testing-FF6C37?style=flat-square&logo=postman&logoColor=white"/>
+<img src="https://img.shields.io/badge/E2E%20Testing-4CAF50?style=flat-square"/>
+<img src="https://img.shields.io/badge/Allure%20Reports-FF6B35?style=flat-square"/>
+<img src="https://img.shields.io/badge/Page%20Object%20Model-6C63FF?style=flat-square"/>
+<img src="https://img.shields.io/badge/CI%2FCD-222222?style=flat-square&logo=githubactions&logoColor=white"/>
+
 </p>
 
 ---
 
-### 🧪 Sample Projects
+## 🧪 Automation Expertise
 
-| Project | Stack | Description |
-|--------|-------|-------------|
-| 🧠 **Playwright E2E Tests** | TypeScript, Playwright | UI + Excel Report validation framework |
-| 📊 **Excel Automation** | NodeJS + ExcelJS | Validates downloadable reports for data consistency |
-| 🔌 **API Test Suite** | Postman, Newman | Covers functional & negative API tests with reports |
-
+| Area                  | Technologies           |
+| --------------------- | ---------------------- |
+| **UI Automation**     | Playwright, TypeScript |
+| **E2E Testing**       | Playwright Test        |
+| **API Testing**       | Postman, Newman        |
+| **Test Architecture** | Page Object Model      |
+| **Test Data**         | Excel, ExcelJS         |
+| **Reporting**         | Allure                 |
+| **Programming**       | TypeScript, Python     |
+| **Database**          | MySQL                  |
+| **Version Control**   | Git                    |
+| **Bug Tracking**      | Jira                   |
+| **CI/CD**             | GitHub Actions         |
 
 ---
 
-### 📷 Aesthetic Gifs 😎
+## 📂 Featured Projects
+
+### 🎭 Playwright E2E Automation
+
+**TypeScript • Playwright • Allure**
+
+A scalable E2E automation suite covering critical business flows.
+
+**Includes:**
+
+* 🔐 Authentication scenarios
+* 🛒 Sales & shopping cart flows
+* 🔎 Product search
+* 📦 Product management
+* 🧪 Regression scenarios
+* 📊 Allure reporting
+* ♻️ Reusable Page Objects
+
+---
+
+### 📊 Excel Report Validation
+
+**Node.js • TypeScript • ExcelJS**
+
+Automated validation of generated Excel reports.
+
+**Validates:**
+
+* 📄 File generation
+* 📊 Report structure
+* 🔢 Data consistency
+* 🧮 Calculated values
+* 🔍 Expected vs actual data
+
+---
+
+### 🔌 API Automation
+
+**Postman • Newman**
+
+API test suite covering:
+
+* ✅ Positive scenarios
+* ❌ Negative scenarios
+* 🔐 Authorization
+* 🔄 Regression testing
+* 📋 Automated reports
+
+---
+
+## 🧠 QA Mindset
+
+```text
+Requirement
+     ↓
+Test Design
+     ↓
+Automation
+     ↓
+Execution
+     ↓
+Reporting
+     ↓
+Failure Analysis
+     ↓
+Continuous Improvement
+```
+
+> My goal is not simply to automate tests —
+> **it's to build automation that provides fast and reliable feedback about product quality.**
+
+---
+
+## 📊 What I Bring
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXZxcmRudHhlMWI3ZmhiZmxieHA3M2xocGtxcHFreGUycjB5M2VjMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="220" />
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="220" />
+
+| 💡  | Focus                          |
+| --- | ------------------------------ |
+| 🎯  | Reliable test automation       |
+| ⚡   | Fast regression feedback       |
+| 🧩  | Maintainable test architecture |
+| 🔍  | Strong attention to edge cases |
+| 📈  | Better test coverage           |
+| 🛠️ | Practical QA engineering       |
+
+</p>
+
+---
+
+## 📫 Let's Connect
+
+<p align="center">
+
+<a href="https://www.linkedin.com/in/sergey-tretyakov/">
+<img src="https://img.shields.io/badge/LinkedIn-Sergey%20Tretyakov-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+ 
+
+<a href="mailto:youremail@example.com">
+<img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+</p>
+
+<p align="center">
+  <i>Quality first. Automate smart. Ship with confidence. 🚀</i>
 </p>
